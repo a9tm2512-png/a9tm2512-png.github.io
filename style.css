@@ -8,6 +8,7 @@ html {
 
 body {
     margin: 0;
+
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -18,23 +19,32 @@ body {
         sans-serif;
 
     color: #333;
-    background-color: #f7f8fa;
+    background-color: #f5f7fa;
+
     line-height: 1.7;
 }
 
-/* ヘッダー */
+
+/* =========================
+   ヘッダー
+========================= */
 
 header {
     background-color: #ffffff;
+
     border-bottom: 1px solid #e5e5e5;
+
     position: sticky;
     top: 0;
+
     z-index: 100;
 }
 
 .header-inner {
     max-width: 1000px;
+
     margin: 0 auto;
+
     padding: 18px 24px;
 
     display: flex;
@@ -44,13 +54,21 @@ header {
 
 header h1 {
     margin: 0;
+
     font-size: 24px;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
 }
 
 nav a {
     color: #333;
+
     text-decoration: none;
-    margin-left: 25px;
+
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -58,10 +76,15 @@ nav a:hover {
     color: #1b73e8;
 }
 
-/* メインビジュアル */
+
+/* =========================
+   メインビジュアル
+========================= */
 
 .hero {
     min-height: 420px;
+
+    padding: 60px 20px;
 
     display: flex;
     justify-content: center;
@@ -69,16 +92,14 @@ nav a:hover {
 
     text-align: center;
 
+    color: white;
+
     background:
         linear-gradient(
             135deg,
             #1665c1,
             #3b8ff5
         );
-
-    color: white;
-
-    padding: 60px 20px;
 }
 
 .hero-content {
@@ -86,14 +107,19 @@ nav a:hover {
 }
 
 .hero-label {
-    letter-spacing: 4px;
+    margin-bottom: 10px;
+
     font-size: 14px;
-    opacity: 0.8;
+
+    letter-spacing: 4px;
+
+    opacity: 0.85;
 }
 
 .hero h2 {
-    font-size: 48px;
     margin: 10px 0 15px;
+
+    font-size: 48px;
 }
 
 .hero p {
@@ -104,12 +130,14 @@ nav a:hover {
     display: inline-block;
 
     margin-top: 25px;
+
     padding: 13px 28px;
 
-    background-color: white;
     color: #1665c1;
+    background-color: white;
 
     text-decoration: none;
+
     font-weight: bold;
 
     border-radius: 30px;
@@ -119,12 +147,20 @@ nav a:hover {
     opacity: 0.9;
 }
 
-/* 共通セクション */
+
+/* =========================
+   共通セクション
+========================= */
+
+main {
+    width: 100%;
+}
 
 .content-section {
     max-width: 900px;
 
     margin: 40px auto;
+
     padding: 35px;
 
     background-color: white;
@@ -139,24 +175,28 @@ nav a:hover {
 .content-section h2 {
     margin-top: 0;
 
+    margin-bottom: 25px;
+
     padding-bottom: 10px;
 
-    border-bottom:
-        3px solid #1b73e8;
+    border-bottom: 3px solid #1b73e8;
 }
 
-/* 次回練習 */
+
+/* =========================
+   練習予定
+========================= */
 
 .schedule-card {
-    background-color: #eef5ff;
-
     padding: 25px;
-
-    border-radius: 10px;
 
     margin-bottom: 25px;
 
     text-align: center;
+
+    background-color: #eef5ff;
+
+    border-radius: 10px;
 }
 
 .schedule-card h3 {
@@ -164,44 +204,135 @@ nav a:hover {
 }
 
 .schedule-card .date {
+    margin-bottom: 5px;
+
     font-size: 25px;
     font-weight: bold;
-
-    margin-bottom: 5px;
 }
-
-/* 練習一覧 */
 
 .schedule-list {
     list-style: none;
+
     padding: 0;
+
     margin: 0;
 }
 
 .schedule-list li {
     display: flex;
+
     justify-content: space-between;
 
     padding: 15px;
 
-    border-bottom:
-        1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
 }
 
-/* お知らせ */
+
+/* =========================
+   備品購入実績
+========================= */
+
+.table-wrap {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.budget-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-bottom: 30px;
+}
+
+.budget-table th,
+.budget-table td {
+    padding: 14px;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.budget-table th {
+    background-color: #f3f6fa;
+
+    font-weight: bold;
+
+    text-align: left;
+}
+
+.budget-table th:nth-child(2),
+.budget-table th:nth-child(3),
+.budget-table th:nth-child(4),
+.budget-table td:nth-child(2),
+.budget-table td:nth-child(3),
+.budget-table td:nth-child(4) {
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+.budget-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.budget-box {
+    padding: 20px;
+
+    text-align: center;
+
+    background-color: #eef5ff;
+
+    border-radius: 10px;
+}
+
+.budget-box span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+.budget-box strong {
+    display: block;
+
+    font-size: 26px;
+}
+
+
+/* =========================
+   お知らせ
+========================= */
 
 .news-item {
     display: flex;
+
     gap: 30px;
 
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 .news-date {
     color: #777;
+
+    white-space: nowrap;
 }
 
-/* フッター */
+
+/* =========================
+   フッター
+========================= */
 
 footer {
     margin-top: 60px;
@@ -210,116 +341,75 @@ footer {
 
     text-align: center;
 
-    background-color: #222;
     color: white;
+
+    background-color: #222;
 }
 
-/* スマートフォン */
 
-@media (max-width: 600px) {
+/* =========================
+   スマートフォン
+========================= */
+
+@media (max-width: 700px) {
 
     .header-inner {
         display: block;
+
         text-align: center;
     }
 
     nav {
-        margin-top: 10px;
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 8px 16px;
+
+        margin-top: 12px;
     }
 
     nav a {
-        margin: 0 8px;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .hero {
-        min-height: 350px;
+        min-height: 340px;
     }
 
     .hero h2 {
         font-size: 34px;
     }
 
+    .hero p {
+        font-size: 16px;
+    }
+
     .content-section {
         margin: 20px 12px;
-        padding: 25px;
+
+        padding: 25px 18px;
     }
 
     .schedule-list li {
         display: block;
     }
 
-    .news-item {
+    .schedule-list li span {
         display: block;
     }
-}
-
-/* 備品購入実績 */
-
-.budget-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.budget-table th,
-.budget-table td {
-    padding: 14px;
-    border-bottom: 1px solid #ddd;
-}
-
-.budget-table th {
-    background-color: #f3f6fa;
-    text-align: left;
-}
-
-.budget-table th:nth-child(n+2),
-.budget-table td:nth-child(n+2) {
-    text-align: right;
-}
-
-/* 予算サマリー */
-
-.budget-summary {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.budget-summary div {
-    background-color: #eef5ff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.budget-summary span {
-    display: block;
-    font-size: 14px;
-    color: #666;
-}
-
-.budget-summary strong {
-    display: block;
-    margin-top: 5px;
-    font-size: 26px;
-}
-
-/* スマートフォン対応 */
-
-@media (max-width: 600px) {
 
     .budget-table {
-        font-size: 13px;
-    }
+        min-width: 650px;
 
-    .budget-table th,
-    .budget-table td {
-        padding: 8px;
+        font-size: 13px;
     }
 
     .budget-summary {
         grid-template-columns: 1fr;
+    }
+
+    .news-item {
+        display: block;
     }
 }
