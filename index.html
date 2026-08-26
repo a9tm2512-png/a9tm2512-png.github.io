@@ -1,20 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>卓球クラブ</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
 
-    <h1>卓球クラブ</h1>
+    <header>
+        <div class="header-inner">
+            <h1>卓球クラブ</h1>
 
-    <h2>ホームページへようこそ！</h2>
+            <nav>
+                <a href="#about">クラブ紹介</a>
+                <a href="#schedule">練習予定</a>
+                <a href="#news">お知らせ</a>
+            </nav>
+        </div>
+    </header>
 
-    <p>
-        卓球を楽しみながら、技術向上を目指しています。
-    </p>
+    <main>
 
-    <h2>練習予定</h2>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-label">TABLE TENNIS CLUB</p>
+                <h2>卓球をもっと楽しく。</h2>
+                <p>
+                    初心者から経験者まで、みんなで楽しく練習しています。
+                </p>
 
-    <ul>
-        <li>9月4日（金）18:00～20:00</li>
-        <li>9月18日（金）18:00～20:00</li>
-        <li>9月25日（金）18:00～20:00</li>
-    </ul>
+                <a class="button" href="#schedule">
+                    練習予定を見る
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>クラブ紹介</h2>
+
+            <p>
+                卓球を楽しみながら、技術向上とメンバー同士の交流を
+                目的として活動しています。
+            </p>
+        </section>
+
+        <section id="schedule" class="content-section">
+            <h2>練習予定</h2>
+
+            <div class="schedule-card">
+                <h3>次回練習</h3>
+                <p class="date">8月28日（金）</p>
+                <p>18:00 ～ 20:00</p>
+            </div>
+
+            <ul class="schedule-list">
+                <li>
+                    <span>9月4日（金）</span>
+                    <span>18:00 ～ 20:00</span>
+                </li>
+
+                <li>
+                    <span>9月18日（金）</span>
+                    <span>18:00 ～ 20:00</span>
+                </li>
+
+                <li>
+                    <span>9月25日（金）</span>
+                    <span>18:00 ～ 20:00</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="news" class="content-section">
+            <h2>お知らせ</h2>
+
+            <div class="news-item">
+                <span class="news-date">2026.08.26</span>
+                <span>ホームページを開設しました。</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 卓球クラブ</p>
+    </footer>
 
 </body>
 
