@@ -253,3 +253,73 @@ footer {
         display: block;
     }
 }
+
+/* 備品購入実績 */
+
+.budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.budget-table th,
+.budget-table td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.budget-table th {
+    background-color: #f3f6fa;
+    text-align: left;
+}
+
+.budget-table th:nth-child(n+2),
+.budget-table td:nth-child(n+2) {
+    text-align: right;
+}
+
+/* 予算サマリー */
+
+.budget-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.budget-summary div {
+    background-color: #eef5ff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.budget-summary span {
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+
+.budget-summary strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 26px;
+}
+
+/* スマートフォン対応 */
+
+@media (max-width: 600px) {
+
+    .budget-table {
+        font-size: 13px;
+    }
+
+    .budget-table th,
+    .budget-table td {
+        padding: 8px;
+    }
+
+    .budget-summary {
+        grid-template-columns: 1fr;
+    }
+}
