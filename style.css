@@ -2,16 +2,22 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
     margin: 0;
 
-    font-family: "Meiryo", "メイリオ", sans-serif;
+    font-family:
+        "Meiryo",
+        "メイリオ",
+        sans-serif;
 
     color: #333;
+
     background-color: #f5f7fa;
 
     line-height: 1.7;
@@ -28,10 +34,12 @@ header {
     border-bottom: 1px solid #e5e5e5;
 
     position: sticky;
+
     top: 0;
 
     z-index: 100;
 }
+
 
 .header-inner {
     max-width: 1000px;
@@ -41,9 +49,12 @@ header {
     padding: 18px 24px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 }
+
 
 header h1 {
     margin: 0;
@@ -51,10 +62,13 @@ header h1 {
     font-size: 24px;
 }
 
+
 nav {
     display: flex;
+
     gap: 24px;
 }
+
 
 nav a {
     color: #333;
@@ -62,8 +76,10 @@ nav a {
     text-decoration: none;
 
     font-size: 14px;
+
     font-weight: bold;
 }
+
 
 nav a:hover {
     color: #1b73e8;
@@ -80,7 +96,9 @@ nav a:hover {
     padding: 60px 20px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
@@ -95,9 +113,11 @@ nav a:hover {
         );
 }
 
+
 .hero-content {
     max-width: 800px;
 }
+
 
 .hero-label {
     margin-bottom: 10px;
@@ -109,15 +129,18 @@ nav a:hover {
     opacity: 0.85;
 }
 
+
 .hero h2 {
     margin: 10px 0 15px;
 
     font-size: 48px;
 }
 
+
 .hero p {
     font-size: 18px;
 }
+
 
 .button {
     display: inline-block;
@@ -127,6 +150,7 @@ nav a:hover {
     padding: 13px 28px;
 
     color: #1665c1;
+
     background-color: white;
 
     text-decoration: none;
@@ -135,6 +159,7 @@ nav a:hover {
 
     border-radius: 30px;
 }
+
 
 .button:hover {
     opacity: 0.9;
@@ -148,6 +173,7 @@ nav a:hover {
 main {
     width: 100%;
 }
+
 
 .content-section {
     max-width: 900px;
@@ -165,6 +191,7 @@ main {
         rgba(0, 0, 0, 0.06);
 }
 
+
 .content-section h2 {
     margin-top: 0;
 
@@ -172,7 +199,8 @@ main {
 
     padding-bottom: 10px;
 
-    border-bottom: 3px solid #1b73e8;
+    border-bottom:
+        3px solid #1b73e8;
 }
 
 
@@ -192,16 +220,20 @@ main {
     border-radius: 10px;
 }
 
+
 .schedule-card h3 {
     margin-top: 0;
 }
+
 
 .schedule-card .date {
     margin-bottom: 5px;
 
     font-size: 25px;
+
     font-weight: bold;
 }
+
 
 .schedule-list {
     list-style: none;
@@ -211,6 +243,7 @@ main {
     margin: 0;
 }
 
+
 .schedule-list li {
     display: flex;
 
@@ -218,7 +251,8 @@ main {
 
     padding: 15px;
 
-    border-bottom: 1px solid #eeeeee;
+    border-bottom:
+        1px solid #eeeeee;
 }
 
 
@@ -237,6 +271,7 @@ main {
     margin-bottom: 40px;
 }
 
+
 .record-box {
     padding: 20px;
 
@@ -246,6 +281,7 @@ main {
 
     border-radius: 10px;
 }
+
 
 .record-box span {
     display: block;
@@ -257,94 +293,121 @@ main {
     font-size: 14px;
 }
 
+
 .record-box strong {
     display: block;
 
     font-size: 28px;
 }
 
+
 .record-title {
     margin-top: 10px;
-    margin-bottom: 30px;
+
+    margin-bottom: 25px;
 
     text-align: center;
 }
 
 
-/* グラフ全体 */
+/* グラフ */
 
 .practice-chart {
-    height: 260px;
+    min-height: 260px;
 
     display: flex;
-    justify-content: space-around;
+
+    justify-content: space-between;
+
     align-items: flex-end;
 
-    gap: 15px;
+    gap: 8px;
 
-    padding: 20px 15px 0;
+    padding: 20px 10px 0;
 
-    border-bottom: 2px solid #dddddd;
+    border-bottom:
+        2px solid #dddddd;
 }
 
-
-/* 各月 */
 
 .chart-column {
     flex: 1;
 
+    min-width: 0;
+
     text-align: center;
 }
 
-
-/* 棒を置くエリア */
 
 .bars {
     height: 200px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: flex-end;
 
     gap: 5px;
 }
 
 
-/* 棒そのもの */
+.bar-wrap {
+    height: 100%;
 
-.bar {
-    width: 28px;
+    display: flex;
 
-    height: calc(var(--count) * 20px);
+    flex-direction: column;
 
-    border-radius: 5px 5px 0 0;
+    justify-content: flex-end;
 
-    transition: height 0.3s ease;
+    align-items: center;
 }
 
 
-/* 定期開催 */
+.bar-count {
+    margin-bottom: 4px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: #555;
+}
+
+
+.bar {
+    width: 26px;
+
+    height:
+        calc(
+            var(--count) * 25px
+        );
+
+    border-radius:
+        5px 5px 0 0;
+
+    transition:
+        height 0.3s ease;
+}
+
 
 .regular {
     background-color: #1b73e8;
 }
 
 
-/* 気まぐれ開催 */
-
 .extra {
     background-color: #ff9f43;
 }
 
 
-/* 月表示 */
-
-.chart-column > span {
+.month {
     display: block;
 
     margin-top: 8px;
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
@@ -352,6 +415,7 @@ main {
 
 .chart-legend {
     display: flex;
+
     justify-content: center;
 
     gap: 30px;
@@ -359,29 +423,36 @@ main {
     margin-top: 25px;
 }
 
+
 .chart-legend > span {
     display: flex;
+
     align-items: center;
 
     gap: 7px;
 }
 
+
 .legend-color {
     display: inline-block;
 
     width: 14px;
+
     height: 14px;
 
     border-radius: 3px;
 }
 
+
 .regular-color {
     background-color: #1b73e8;
 }
 
+
 .extra-color {
     background-color: #ff9f43;
 }
+
 
 .record-note {
     margin-top: 20px;
@@ -404,6 +475,7 @@ main {
     overflow-x: auto;
 }
 
+
 .budget-table {
     width: 100%;
 
@@ -412,12 +484,15 @@ main {
     margin-bottom: 30px;
 }
 
+
 .budget-table th,
 .budget-table td {
     padding: 14px;
 
-    border-bottom: 1px solid #dddddd;
+    border-bottom:
+        1px solid #dddddd;
 }
+
 
 .budget-table th {
     background-color: #f3f6fa;
@@ -426,6 +501,7 @@ main {
 
     text-align: left;
 }
+
 
 .budget-table th:nth-child(2),
 .budget-table th:nth-child(3),
@@ -438,6 +514,7 @@ main {
     white-space: nowrap;
 }
 
+
 .budget-summary {
     display: grid;
 
@@ -449,6 +526,7 @@ main {
     margin-top: 25px;
 }
 
+
 .budget-box {
     padding: 20px;
 
@@ -459,6 +537,7 @@ main {
     border-radius: 10px;
 }
 
+
 .budget-box span {
     display: block;
 
@@ -468,6 +547,7 @@ main {
 
     font-size: 14px;
 }
+
 
 .budget-box strong {
     display: block;
@@ -483,22 +563,27 @@ main {
 .news-item {
     display: grid;
 
-    grid-template-columns: 120px minmax(0, 1fr);
+    grid-template-columns:
+        120px minmax(0, 1fr);
 
     gap: 20px;
 
     padding: 14px 0;
 
-    border-bottom: 1px solid #eeeeee;
+    border-bottom:
+        1px solid #eeeeee;
 }
+
 
 .news-item > div {
     min-width: 0;
 }
 
+
 .news-item:last-child {
     border-bottom: none;
 }
+
 
 .news-date {
     color: #777;
@@ -536,6 +621,7 @@ footer {
         text-align: center;
     }
 
+
     nav {
         justify-content: center;
 
@@ -546,21 +632,26 @@ footer {
         margin-top: 12px;
     }
 
+
     nav a {
         font-size: 13px;
     }
+
 
     .hero {
         min-height: 340px;
     }
 
+
     .hero h2 {
         font-size: 34px;
     }
 
+
     .hero p {
         font-size: 16px;
     }
+
 
     .content-section {
         margin: 20px 12px;
@@ -575,6 +666,7 @@ footer {
         display: block;
     }
 
+
     .schedule-list li span {
         display: block;
     }
@@ -586,28 +678,37 @@ footer {
         grid-template-columns: 1fr;
     }
 
+
     .practice-chart {
-        height: 230px;
+        min-width: 560px;
 
-        gap: 4px;
+        gap: 3px;
 
-        padding-left: 2px;
-        padding-right: 2px;
+        padding-left: 5px;
+
+        padding-right: 5px;
     }
 
-    .bars {
-        height: 175px;
 
+    #record {
+        overflow-x: auto;
+    }
+
+
+    .bars {
         gap: 2px;
     }
 
+
     .bar {
-        width: 16px;
+        width: 18px;
     }
 
-    .chart-column > span {
+
+    .month {
         font-size: 12px;
     }
+
 
     .chart-legend {
         gap: 15px;
@@ -624,6 +725,7 @@ footer {
         font-size: 13px;
     }
 
+
     .budget-summary {
         grid-template-columns: 1fr;
     }
@@ -634,6 +736,7 @@ footer {
     .news-item {
         display: block;
     }
+
 
     .news-date {
         display: block;
