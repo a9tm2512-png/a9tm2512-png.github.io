@@ -17,6 +17,7 @@ body {
     line-height: 1.7;
 }
 
+
 /* =========================
    ヘッダー
 ========================= */
@@ -222,6 +223,168 @@ main {
 
 
 /* =========================
+   練習実績
+========================= */
+
+.record-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 40px;
+}
+
+.record-box {
+    padding: 20px;
+
+    text-align: center;
+
+    background-color: #eef5ff;
+
+    border-radius: 10px;
+}
+
+.record-box span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+.record-box strong {
+    display: block;
+
+    font-size: 28px;
+}
+
+.record-title {
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+
+/* グラフ全体 */
+.practice-chart {
+    height: 260px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    gap: 15px;
+
+    padding: 20px 15px 0;
+
+    border-bottom: 2px solid #dddddd;
+}
+
+
+/* 各月 */
+.chart-column {
+    flex: 1;
+
+    text-align: center;
+}
+
+
+/* 棒を置くエリア */
+.bars {
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: 5px;
+}
+
+
+/* 棒そのもの */
+.bar {
+    width: 28px;
+
+    border-radius: 5px 5px 0 0;
+
+    transition: height 0.3s ease;
+}
+
+
+/* 定期開催 */
+.regular {
+    background-color: #1b73e8;
+}
+
+
+/* 気まぐれ開催 */
+.extra {
+    background-color: #ff9f43;
+}
+
+
+/* 月表示 */
+.chart-column > span {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 14px;
+}
+
+
+/* 凡例 */
+.chart-legend {
+    display: flex;
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-top: 25px;
+}
+
+.chart-legend > span {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.legend-color {
+    display: inline-block;
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 3px;
+}
+
+.regular-color {
+    background-color: #1b73e8;
+}
+
+.extra-color {
+    background-color: #ff9f43;
+}
+
+.record-note {
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================
    備品購入実績
 ========================= */
 
@@ -306,9 +469,11 @@ main {
 /* =========================
    お知らせ
 ========================= */
+
 .news-item {
     display: grid;
-    grid-template-columns: 120px 1fr;
+
+    grid-template-columns: 120px minmax(0, 1fr);
 
     gap: 20px;
 
@@ -317,22 +482,18 @@ main {
     border-bottom: 1px solid #eeeeee;
 }
 
+.news-item > div {
+    min-width: 0;
+}
+
 .news-item:last-child {
     border-bottom: none;
 }
 
 .news-date {
     color: #777;
+
     white-space: nowrap;
-}
-
-/* スマートフォン */
-@media (max-width: 700px) {
-
-    .news-item {
-        grid-template-columns: 1fr;
-        gap: 3px;
-    }
 }
 
 
@@ -397,6 +558,9 @@ footer {
         padding: 25px 18px;
     }
 
+
+    /* 練習予定 */
+
     .schedule-list li {
         display: block;
     }
@@ -404,6 +568,45 @@ footer {
     .schedule-list li span {
         display: block;
     }
+
+
+    /* 練習実績 */
+
+    .record-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-chart {
+        height: 230px;
+
+        gap: 4px;
+
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .bars {
+        height: 175px;
+
+        gap: 2px;
+    }
+
+    .bar {
+        width: 16px;
+    }
+
+    .chart-column > span {
+        font-size: 12px;
+    }
+
+    .chart-legend {
+        gap: 15px;
+
+        font-size: 13px;
+    }
+
+
+    /* 備品購入実績 */
 
     .budget-table {
         min-width: 650px;
@@ -415,7 +618,16 @@ footer {
         grid-template-columns: 1fr;
     }
 
+
+    /* お知らせ */
+
     .news-item {
         display: block;
+    }
+
+    .news-date {
+        display: block;
+
+        margin-bottom: 3px;
     }
 }
