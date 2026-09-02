@@ -260,20 +260,31 @@ main {
    練習実績
 ========================= */
 
+.record-period {
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 15px;
+}
+
+
 .record-summary {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(2, 1fr);
 
-    gap: 15px;
-
-    margin-bottom: 40px;
+    gap: 20px;
 }
 
 
 .record-box {
-    padding: 20px;
+    padding: 28px 20px;
 
     text-align: center;
 
@@ -290,172 +301,45 @@ main {
 
     color: #666;
 
-    font-size: 14px;
+    font-size: 15px;
 }
 
 
 .record-box strong {
     display: block;
 
-    font-size: 28px;
+    color: #1b73e8;
+
+    font-size: 34px;
 }
 
 
-.record-title {
-    margin-top: 10px;
-
-    margin-bottom: 25px;
-
-    text-align: center;
-}
-
-
-/* グラフ */
-
-.practice-chart {
-    min-height: 260px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: flex-end;
-
-    gap: 8px;
-
-    padding: 20px 10px 0;
-
-    border-bottom:
-        2px solid #dddddd;
-}
-
-
-.chart-column {
-    flex: 1;
-
-    min-width: 0;
-
-    text-align: center;
-}
-
-
-.bars {
-    height: 200px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: flex-end;
-
-    gap: 5px;
-}
-
-
-.bar-wrap {
-    height: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-end;
-
-    align-items: center;
-}
-
-
-.bar-count {
-    margin-bottom: 4px;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    color: #555;
-}
-
-
-.bar {
-    width: 26px;
-
-    height:
-        calc(
-            var(--count) * 25px
-        );
-
-    border-radius:
-        5px 5px 0 0;
-
-    transition:
-        height 0.3s ease;
-}
-
-
-.regular {
-    background-color: #1b73e8;
-}
-
-
-.extra {
-    background-color: #ff9f43;
-}
-
-
-.month {
-    display: block;
-
-    margin-top: 8px;
-
-    font-size: 13px;
-}
-
-
-/* 凡例 */
-
-.chart-legend {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 30px;
-
+.record-total {
     margin-top: 25px;
+
+    padding-top: 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #eeeeee;
+
+    font-size: 18px;
 }
 
 
-.chart-legend > span {
-    display: flex;
+.record-total strong {
+    margin-left: 8px;
 
-    align-items: center;
+    color: #1b73e8;
 
-    gap: 7px;
-}
-
-
-.legend-color {
-    display: inline-block;
-
-    width: 14px;
-
-    height: 14px;
-
-    border-radius: 3px;
-}
-
-
-.regular-color {
-    background-color: #1b73e8;
-}
-
-
-.extra-color {
-    background-color: #ff9f43;
+    font-size: 30px;
 }
 
 
 .record-note {
-    margin-top: 20px;
+    margin-top: 15px;
+
+    margin-bottom: 0;
 
     text-align: center;
 
@@ -676,44 +560,18 @@ footer {
 
     .record-summary {
         grid-template-columns: 1fr;
+
+        gap: 12px;
     }
 
 
-    .practice-chart {
-        min-width: 560px;
-
-        gap: 3px;
-
-        padding-left: 5px;
-
-        padding-right: 5px;
+    .record-box {
+        padding: 20px;
     }
 
 
-    #record {
-        overflow-x: auto;
-    }
-
-
-    .bars {
-        gap: 2px;
-    }
-
-
-    .bar {
-        width: 18px;
-    }
-
-
-    .month {
-        font-size: 12px;
-    }
-
-
-    .chart-legend {
-        gap: 15px;
-
-        font-size: 13px;
+    .record-box strong {
+        font-size: 30px;
     }
 
 
@@ -743,4 +601,5 @@ footer {
 
         margin-bottom: 3px;
     }
+
 }
