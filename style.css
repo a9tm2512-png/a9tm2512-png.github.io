@@ -272,6 +272,7 @@ main {
 
 
 /* グラフ全体 */
+
 .practice-chart {
     height: 260px;
 
@@ -288,6 +289,7 @@ main {
 
 
 /* 各月 */
+
 .chart-column {
     flex: 1;
 
@@ -296,6 +298,7 @@ main {
 
 
 /* 棒を置くエリア */
+
 .bars {
     height: 200px;
 
@@ -308,8 +311,11 @@ main {
 
 
 /* 棒そのもの */
+
 .bar {
     width: 28px;
+
+    height: calc(var(--count) * 20px);
 
     border-radius: 5px 5px 0 0;
 
@@ -318,18 +324,21 @@ main {
 
 
 /* 定期開催 */
+
 .regular {
     background-color: #1b73e8;
 }
 
 
 /* 気まぐれ開催 */
+
 .extra {
     background-color: #ff9f43;
 }
 
 
 /* 月表示 */
+
 .chart-column > span {
     display: block;
 
@@ -340,6 +349,7 @@ main {
 
 
 /* 凡例 */
+
 .chart-legend {
     display: flex;
     justify-content: center;
