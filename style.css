@@ -43,7 +43,7 @@ header {
 
 
 .header-inner {
-    max-width: 1100px;
+    max-width: 1200px;
 
     margin: 0 auto;
 
@@ -69,7 +69,7 @@ header h1 {
 nav {
     display: flex;
 
-    gap: 20px;
+    gap: 18px;
 }
 
 
@@ -218,6 +218,13 @@ main {
 }
 
 
+.table-wrap {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
 .roadmap-table {
     width: 100%;
 
@@ -250,12 +257,8 @@ main {
     color: #245a96;
 
     font-weight: bold;
-
-    text-align: left;
 }
 
-
-/* STEP */
 
 .roadmap-table th:first-child,
 .roadmap-table td:first-child {
@@ -267,15 +270,11 @@ main {
 }
 
 
-/* 練習メニュー */
-
 .roadmap-table th:nth-child(2),
 .roadmap-table td:nth-child(2) {
     text-align: center;
 }
 
-
-/* 練習量の目安 */
 
 .roadmap-table th:nth-child(3),
 .roadmap-table td:nth-child(3) {
@@ -284,8 +283,6 @@ main {
     white-space: nowrap;
 }
 
-
-/* 通常のSTEP */
 
 .roadmap-table tbody tr:not(.roadmap-category) {
     background-color: #ffffff;
@@ -297,14 +294,10 @@ main {
 }
 
 
-/* マウスを乗せたとき */
-
 .roadmap-table tbody tr:not(.roadmap-category):hover {
     background-color: #eef6ff;
 }
 
-
-/* 基礎編・応用編など */
 
 .roadmap-category td {
     padding-top: 13px;
@@ -325,14 +318,10 @@ main {
 }
 
 
-/* 最後の行 */
-
 .roadmap-table tbody tr:last-child td {
     border-bottom: none;
 }
 
-
-/* 注記 */
 
 .roadmap-note {
     margin-top: 15px;
@@ -512,15 +501,211 @@ main {
 
 
 /* =========================
-   備品購入実績
+   未経験から実戦レベルまでの目安
 ========================= */
 
-.table-wrap {
-    width: 100%;
-
-    overflow-x: auto;
+#level-guide {
+    background-color: #f8fbff;
 }
 
+
+.level-goal {
+    max-width: 420px;
+
+    margin: 0 auto 25px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    background-color: #e7f1ff;
+
+    border-radius: 10px;
+}
+
+
+.level-goal span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #666;
+
+    font-size: 15px;
+}
+
+
+.level-goal strong {
+    display: block;
+
+    color: #1665c1;
+
+    font-size: 34px;
+}
+
+
+.level-calc {
+    padding: 22px;
+
+    text-align: center;
+
+    background-color: #ffffff;
+
+    border: 1px solid #dce8f7;
+
+    border-radius: 10px;
+}
+
+
+.level-calc p {
+    margin: 6px 0;
+}
+
+
+.level-arrow {
+    color: #1b73e8;
+
+    font-size: 22px;
+}
+
+
+.level-hours {
+    color: #1665c1;
+
+    font-size: 25px;
+}
+
+
+.level-intro {
+    margin: 30px 0 20px;
+
+    text-align: center;
+}
+
+
+.level-training {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.level-training-box {
+    padding: 22px;
+
+    text-align: center;
+
+    background-color: #eef5ff;
+
+    border-radius: 10px;
+}
+
+
+.level-training-box h3 {
+    margin-top: 0;
+
+    margin-bottom: 10px;
+
+    color: #245a96;
+}
+
+
+.level-time {
+    margin-bottom: 5px;
+
+    color: #666;
+}
+
+
+.level-training-box > strong {
+    display: block;
+
+    color: #1b73e8;
+
+    font-size: 26px;
+}
+
+
+.level-detail {
+    margin-bottom: 0;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+.level-result {
+    margin-top: 25px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    background-color: #ffffff;
+
+    border-radius: 10px;
+
+    border: 1px solid #dce8f7;
+}
+
+
+.level-result strong {
+    color: #1665c1;
+
+    font-size: 26px;
+}
+
+
+.level-highlight {
+    margin-top: 25px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    color: #245a96;
+
+    background-color: #dcecff;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+
+.level-highlight strong {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: #1665c1;
+
+    font-size: 28px;
+}
+
+
+.level-note {
+    margin-top: 15px;
+
+    margin-bottom: 0;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   備品購入実績
+========================= */
 
 .budget-table {
     width: 100%;
@@ -754,6 +939,25 @@ footer {
 
     .record-box strong {
         font-size: 30px;
+    }
+
+
+    /* 実戦までの目安 */
+
+    .level-training {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .level-goal strong {
+        font-size: 30px;
+    }
+
+
+    .level-highlight strong {
+        font-size: 24px;
     }
 
 
