@@ -255,6 +255,8 @@ main {
 }
 
 
+/* STEP */
+
 .roadmap-table th:first-child,
 .roadmap-table td:first-child {
     width: 70px;
@@ -264,6 +266,16 @@ main {
     white-space: nowrap;
 }
 
+
+/* 練習メニュー */
+
+.roadmap-table th:nth-child(2),
+.roadmap-table td:nth-child(2) {
+    text-align: center;
+}
+
+
+/* 練習量の目安 */
 
 .roadmap-table th:nth-child(3),
 .roadmap-table td:nth-child(3) {
@@ -284,6 +296,8 @@ main {
     background-color: #f8fbff;
 }
 
+
+/* マウスを乗せたとき */
 
 .roadmap-table tbody tr:not(.roadmap-category):hover {
     background-color: #eef6ff;
