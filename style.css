@@ -209,136 +209,10 @@ main {
 }
 
 
-/* =========================
-   練習ロードマップ
-========================= */
-
-#roadmap {
-    background-color: #f8fbff;
-}
-
-
 .table-wrap {
     width: 100%;
 
     overflow-x: auto;
-}
-
-
-.roadmap-table {
-    width: 100%;
-
-    border-collapse: separate;
-
-    border-spacing: 0;
-
-    margin-top: 20px;
-
-    overflow: hidden;
-
-    border-radius: 10px;
-
-    border: 1px solid #dce8f7;
-}
-
-
-.roadmap-table th,
-.roadmap-table td {
-    padding: 13px 14px;
-
-    border-bottom:
-        1px solid #e3ebf5;
-}
-
-
-.roadmap-table th {
-    background-color: #e7f1ff;
-
-    color: #245a96;
-
-    font-weight: bold;
-}
-
-
-.roadmap-table th:first-child,
-.roadmap-table td:first-child {
-    width: 70px;
-
-    text-align: center;
-
-    white-space: nowrap;
-}
-
-
-.roadmap-table th:nth-child(2),
-.roadmap-table td:nth-child(2) {
-    text-align: center;
-}
-
-
-.roadmap-table th:nth-child(3),
-.roadmap-table td:nth-child(3) {
-    text-align: right;
-
-    white-space: nowrap;
-}
-
-
-.roadmap-table tbody tr:not(.roadmap-category) {
-    background-color: #ffffff;
-}
-
-
-.roadmap-table tbody tr:not(.roadmap-category):nth-child(even) {
-    background-color: #f8fbff;
-}
-
-
-.roadmap-table tbody tr:not(.roadmap-category):hover {
-    background-color: #eef6ff;
-}
-
-
-.roadmap-category td {
-    padding-top: 13px;
-
-    padding-bottom: 13px;
-
-    text-align: left !important;
-
-    font-weight: bold;
-
-    font-size: 16px;
-
-    color: #1665c1;
-
-    background-color: #dcecff;
-
-    border-top: 1px solid #c8ddf5;
-}
-
-
-.roadmap-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-
-.roadmap-note {
-    margin-top: 15px;
-
-    margin-bottom: 0;
-
-    padding: 10px 15px;
-
-    text-align: center;
-
-    color: #666;
-
-    font-size: 13px;
-
-    background-color: #eef5ff;
-
-    border-radius: 8px;
 }
 
 
@@ -501,6 +375,142 @@ main {
 
 
 /* =========================
+   練習ロードマップ
+========================= */
+
+#roadmap {
+    background-color: #f8fbff;
+}
+
+
+.roadmap-table {
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    border: 1px solid #dce8f7;
+}
+
+
+.roadmap-table th,
+.roadmap-table td {
+    padding: 13px 14px;
+
+    border-bottom:
+        1px solid #e3ebf5;
+}
+
+
+.roadmap-table th {
+    background-color: #e7f1ff;
+
+    color: #245a96;
+
+    font-weight: bold;
+}
+
+
+/* STEP */
+
+.roadmap-table th:first-child,
+.roadmap-table td:first-child {
+    width: 70px;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/* 練習メニュー */
+
+.roadmap-table th:nth-child(2),
+.roadmap-table td:nth-child(2) {
+    text-align: center;
+}
+
+
+/* 練習量の目安 */
+
+.roadmap-table th:nth-child(3),
+.roadmap-table td:nth-child(3) {
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+
+/* 通常行 */
+
+.roadmap-table tbody tr:not(.roadmap-category) {
+    background-color: #ffffff;
+}
+
+
+.roadmap-table tbody tr:not(.roadmap-category):nth-child(even) {
+    background-color: #f8fbff;
+}
+
+
+.roadmap-table tbody tr:not(.roadmap-category):hover {
+    background-color: #eef6ff;
+}
+
+
+/* 基礎編・応用編など */
+
+.roadmap-category td {
+    padding-top: 13px;
+
+    padding-bottom: 13px;
+
+    text-align: left !important;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    color: #1665c1;
+
+    background-color: #dcecff;
+
+    border-top: 1px solid #c8ddf5;
+}
+
+
+.roadmap-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+.roadmap-note {
+    margin-top: 15px;
+
+    margin-bottom: 0;
+
+    padding: 10px 15px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 13px;
+
+    background-color: #eef5ff;
+
+    border-radius: 8px;
+}
+
+
+/* =========================
    未経験から実戦レベルまでの目安
 ========================= */
 
@@ -649,9 +659,9 @@ main {
 
     background-color: #ffffff;
 
-    border-radius: 10px;
-
     border: 1px solid #dce8f7;
+
+    border-radius: 10px;
 }
 
 
@@ -891,26 +901,6 @@ footer {
     }
 
 
-    /* 練習ロードマップ */
-
-    .roadmap-table {
-        min-width: 620px;
-
-        font-size: 13px;
-    }
-
-
-    .roadmap-table th,
-    .roadmap-table td {
-        padding: 11px 10px;
-    }
-
-
-    .roadmap-category td {
-        font-size: 14px;
-    }
-
-
     /* 練習予定 */
 
     .schedule-list li {
@@ -942,7 +932,27 @@ footer {
     }
 
 
-    /* 実戦までの目安 */
+    /* 練習ロードマップ */
+
+    .roadmap-table {
+        min-width: 620px;
+
+        font-size: 13px;
+    }
+
+
+    .roadmap-table th,
+    .roadmap-table td {
+        padding: 11px 10px;
+    }
+
+
+    .roadmap-category td {
+        font-size: 14px;
+    }
+
+
+    /* 未経験から実戦レベルまでの目安 */
 
     .level-training {
         grid-template-columns: 1fr;
