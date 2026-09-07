@@ -1,3 +1,4 @@
+```css
 * {
     box-sizing: border-box;
 }
@@ -212,12 +213,25 @@ main {
    練習ロードマップ
 ========================= */
 
+#roadmap {
+    background-color: #f8fbff;
+}
+
+
 .roadmap-table {
     width: 100%;
 
-    border-collapse: collapse;
+    border-collapse: separate;
+
+    border-spacing: 0;
 
     margin-top: 20px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    border: 1px solid #dce8f7;
 }
 
 
@@ -226,12 +240,14 @@ main {
     padding: 13px 14px;
 
     border-bottom:
-        1px solid #dddddd;
+        1px solid #e3ebf5;
 }
 
 
 .roadmap-table th {
-    background-color: #f3f6fa;
+    background-color: #e7f1ff;
+
+    color: #245a96;
 
     font-weight: bold;
 
@@ -257,10 +273,29 @@ main {
 }
 
 
-.roadmap-category td {
-    padding-top: 12px;
+/* 通常のSTEP */
 
-    padding-bottom: 12px;
+.roadmap-table tbody tr:not(.roadmap-category) {
+    background-color: #ffffff;
+}
+
+
+.roadmap-table tbody tr:not(.roadmap-category):nth-child(even) {
+    background-color: #f8fbff;
+}
+
+
+.roadmap-table tbody tr:not(.roadmap-category):hover {
+    background-color: #eef6ff;
+}
+
+
+/* 基礎編・応用編など */
+
+.roadmap-category td {
+    padding-top: 13px;
+
+    padding-bottom: 13px;
 
     text-align: left !important;
 
@@ -268,22 +303,39 @@ main {
 
     font-size: 16px;
 
-    background-color: #eef5ff;
-
     color: #1665c1;
+
+    background-color: #dcecff;
+
+    border-top: 1px solid #c8ddf5;
 }
 
+
+/* 最後の行 */
+
+.roadmap-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* 注記 */
 
 .roadmap-note {
     margin-top: 15px;
 
     margin-bottom: 0;
 
+    padding: 10px 15px;
+
     text-align: center;
 
-    color: #777;
+    color: #666;
 
     font-size: 13px;
+
+    background-color: #eef5ff;
+
+    border-radius: 8px;
 }
 
 
@@ -719,3 +771,4 @@ footer {
     }
 
 }
+```
