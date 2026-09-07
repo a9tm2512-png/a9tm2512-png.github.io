@@ -42,7 +42,7 @@ header {
 
 
 .header-inner {
-    max-width: 1000px;
+    max-width: 1100px;
 
     margin: 0 auto;
 
@@ -60,13 +60,15 @@ header h1 {
     margin: 0;
 
     font-size: 24px;
+
+    white-space: nowrap;
 }
 
 
 nav {
     display: flex;
 
-    gap: 24px;
+    gap: 20px;
 }
 
 
@@ -78,6 +80,8 @@ nav a {
     font-size: 14px;
 
     font-weight: bold;
+
+    white-space: nowrap;
 }
 
 
@@ -205,6 +209,85 @@ main {
 
 
 /* =========================
+   練習ロードマップ
+========================= */
+
+.roadmap-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+}
+
+
+.roadmap-table th,
+.roadmap-table td {
+    padding: 13px 14px;
+
+    border-bottom:
+        1px solid #dddddd;
+}
+
+
+.roadmap-table th {
+    background-color: #f3f6fa;
+
+    font-weight: bold;
+
+    text-align: left;
+}
+
+
+.roadmap-table th:first-child,
+.roadmap-table td:first-child {
+    width: 70px;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+.roadmap-table th:nth-child(3),
+.roadmap-table td:nth-child(3) {
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+
+.roadmap-category td {
+    padding-top: 12px;
+
+    padding-bottom: 12px;
+
+    text-align: left !important;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    background-color: #eef5ff;
+
+    color: #1665c1;
+}
+
+
+.roadmap-note {
+    margin-top: 15px;
+
+    margin-bottom: 0;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================
    練習予定
 ========================= */
 
@@ -255,13 +338,19 @@ main {
         1px solid #eeeeee;
 }
 
+
 .schedule-note {
     margin-top: 20px;
+
     margin-bottom: 0;
+
     text-align: center;
+
     color: #777;
+
     font-size: 13px;
 }
+
 
 /* =========================
    練習実績
@@ -548,6 +637,26 @@ footer {
         margin: 20px 12px;
 
         padding: 25px 18px;
+    }
+
+
+    /* 練習ロードマップ */
+
+    .roadmap-table {
+        min-width: 620px;
+
+        font-size: 13px;
+    }
+
+
+    .roadmap-table th,
+    .roadmap-table td {
+        padding: 11px 10px;
+    }
+
+
+    .roadmap-category td {
+        font-size: 14px;
     }
 
 
