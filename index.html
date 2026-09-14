@@ -113,6 +113,22 @@
 </section>
  
 <script>
+  // 休みにしたい日（YYYY-MM-DD で指定）
+  const holidayDates = [
+    "2026-09-21"
+  ];
+ 
+  function formatISODate(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  }
+ 
+  function isHoliday(date) {
+    return holidayDates.includes(formatISODate(date));
+  }
+ 
   function formatJapaneseDate(date) {
     const y = date.getFullYear();
     const m = date.getMonth() + 1;
@@ -128,6 +144,7 @@
       d.setDate(now.getDate() + i);
  
       if (!practiceDays.includes(d.getDay())) continue;
+      if (isHoliday(d)) continue; // ←休み除外
  
       const candidate = new Date(d);
       candidate.setHours(18, 0, 0, 0);
@@ -137,11 +154,10 @@
     return null;
   }
  
-  // 次の2週間分（約14日）の月・金18:00を取得
   function getNextTwoWeeks(now) {
     const practiceDays = [1, 5]; // 月, 金
     const end = new Date(now);
-    end.setDate(now.getDate() + 14); // 約2週間（14日）
+    end.setDate(now.getDate() + 14);
  
     const result = [];
     for (let i = 0; i <= 14; i++) {
@@ -149,6 +165,7 @@
       d.setDate(now.getDate() + i);
  
       if (!practiceDays.includes(d.getDay())) continue;
+      if (isHoliday(d)) continue; // ←休み除外
  
       const occ = new Date(d);
       occ.setHours(18, 0, 0, 0);
@@ -165,29 +182,24 @@
   (function initSchedule(){
     const now = new Date();
  
-    // 次回
     const next = getNextPracticeDate(now);
     document.getElementById('next-practice-date').textContent =
       next ? formatJapaneseDate(next) : '調整中';
  
-    // 2週分（月・金）を作成し、次回（最初の回）はリストから除外
     const occurrences = getNextTwoWeeks(now);
  
     const nextTime = next ? next.getTime() : null;
     const filtered = occurrences.filter(d => d.getTime() !== nextTime);
  
     const list = document.getElementById('practice-list');
-    list.innerHTML = filtered.map(d => {
-      return `
+    list.innerHTML = filtered.map(d => `
 <li>
 <span>${formatJapaneseDate(d)}</span>
 <span>18:00 ～ 20:00</span>
 </li>
-      `;
-    }).join('');
+    `).join('');
   })();
 </script>
-
 
         <!-- =========================
              練習実績
