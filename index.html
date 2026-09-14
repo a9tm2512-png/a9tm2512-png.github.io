@@ -113,79 +113,124 @@
 </section>
  
 <script>
+
+  const closedDates = [
+    '2026-09-21'
+  ];
+
   function formatJapaneseDate(date) {
+
     const y = date.getFullYear();
     const m = date.getMonth() + 1;
     const d = date.getDate();
     const w = ['日','月','火','水','木','金','土'][date.getDay()];
+
     return `${y}年${m}月${d}日（${w}）`;
   }
- 
+
+  function formatDateKey(date) {
+
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+
+    return `${y}-${m}-${d}`;
+  }
+
   function getNextPracticeDate(now) {
+
     const practiceDays = [1, 5]; // 月, 金
+
     for (let i = 0; i < 14; i++) {
+
       const d = new Date(now);
       d.setDate(now.getDate() + i);
- 
+
       if (!practiceDays.includes(d.getDay())) continue;
- 
+
+      // 休みの日は次回練習日から除外
+      if (closedDates.includes(formatDateKey(d))) continue;
+
       const candidate = new Date(d);
       candidate.setHours(18, 0, 0, 0);
- 
+
       if (candidate.getTime() >= now.getTime()) return candidate;
     }
+
     return null;
   }
- 
+
   // 次の2週間分（約14日）の月・金18:00を取得
   function getNextTwoWeeks(now) {
+
     const practiceDays = [1, 5]; // 月, 金
+
     const end = new Date(now);
-    end.setDate(now.getDate() + 14); // 約2週間（14日）
- 
+    end.setDate(now.getDate() + 14);
+
     const result = [];
+
     for (let i = 0; i <= 14; i++) {
+
       const d = new Date(now);
       d.setDate(now.getDate() + i);
- 
+
       if (!practiceDays.includes(d.getDay())) continue;
- 
+
       const occ = new Date(d);
       occ.setHours(18, 0, 0, 0);
- 
-      if (occ.getTime() >= now.getTime() && occ.getTime() <= end.getTime()) {
+
+      if (
+        occ.getTime() >= now.getTime() &&
+        occ.getTime() <= end.getTime()
+      ) {
         result.push(occ);
       }
     }
- 
+
     result.sort((a, b) => a - b);
+
     return result;
   }
- 
+
   (function initSchedule(){
+
     const now = new Date();
- 
-    // 次回
+
+    // 次回練習日
     const next = getNextPracticeDate(now);
+
     document.getElementById('next-practice-date').textContent =
       next ? formatJapaneseDate(next) : '調整中';
- 
-    // 2週分（月・金）を作成し、次回（最初の回）はリストから除外
+
+    // 2週分（月・金）を取得
     const occurrences = getNextTwoWeeks(now);
- 
+
+    // 次回練習日は一覧から除外
     const nextTime = next ? next.getTime() : null;
-    const filtered = occurrences.filter(d => d.getTime() !== nextTime);
- 
+
+    const filtered = occurrences.filter(
+      d => d.getTime() !== nextTime
+    );
+
     const list = document.getElementById('practice-list');
+
     list.innerHTML = filtered.map(d => {
+
+      const isClosed =
+        closedDates.includes(formatDateKey(d));
+
       return `
-<li>
-<span>${formatJapaneseDate(d)}</span>
-<span>18:00 ～ 20:00</span>
-</li>
+        <li>
+          <span>${formatJapaneseDate(d)}</span>
+          <span>${isClosed ? '休み' : '18:00 ～ 20:00'}</span>
+        </li>
       `;
+
     }).join('');
+
   })();
+
 </script>
 
 
