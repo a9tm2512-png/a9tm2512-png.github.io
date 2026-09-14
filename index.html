@@ -93,45 +93,100 @@
              練習予定
         ========================== -->
 
-        <section id="schedule" class="content-section">
-
-            <h2>練習予定</h2>
-
-            <div class="schedule-card">
-
-                <h3>次回練習</h3>
-
-                <p class="date">
-                    9月14日（月）
-                </p>
-
-                <p>
-                    18:00 ～ 20:00
-                </p>
-
-            </div>
-
-
-            <ul class="schedule-list">
-
-                <li>
-                    <span>9月18日（金）</span>
-                    <span>18:00 ～ 20:00</span>
-                </li>
-
-                <li>
-                    <span>9月21日（月）</span>
-                    <span>18:00 ～ 20:00</span>
-                </li>
-
-            </ul>
-
-
-            <p class="schedule-note">
-                ※気まぐれ練習の予定日は記載しておりません。気まぐれのため。
-            </p>
-
-        </section>
+<section id="schedule" class="content-section">
+ 
+  <h2>練習予定</h2>
+ 
+  <div class="schedule-card">
+<h3>次回練習</h3>
+ 
+    <p class="date" id="next-practice-date">ーー年--月--日（--）</p>
+<p id="next-practice-time">18:00 ～ 20:00</p>
+</div>
+ 
+  <ul class="schedule-list" id="practice-list"></ul>
+ 
+  <p class="schedule-note">
+    ※気まぐれ練習の予定日は記載しておりません。気まぐれのため。
+</p>
+ 
+</section>
+ 
+<script>
+  function formatJapaneseDate(date) {
+    const y = date.getFullYear();
+    const m = date.getMonth() + 1;
+    const d = date.getDate();
+    const w = ['日','月','火','水','木','金','土'][date.getDay()];
+    return `${y}年${m}月${d}日（${w}）`;
+  }
+ 
+  function getNextPracticeDate(now) {
+    const practiceDays = [1, 5]; // 月, 金
+    for (let i = 0; i < 14; i++) {
+      const d = new Date(now);
+      d.setDate(now.getDate() + i);
+ 
+      if (!practiceDays.includes(d.getDay())) continue;
+ 
+      const candidate = new Date(d);
+      candidate.setHours(18, 0, 0, 0);
+ 
+      if (candidate.getTime() >= now.getTime()) return candidate;
+    }
+    return null;
+  }
+ 
+  // 次の4週間分（月・金 18:00）の予定を作る
+  function getNextFourWeeks(now) {
+    const practiceDays = [1, 5]; // 月, 金
+    const end = new Date(now);
+    end.setDate(now.getDate() + 14); // 約4週間（28日）
+ 
+    const result = [];
+    // 日単位で走査（28日分）
+    for (let i = 0; i <= 14; i++) {
+      const d = new Date(now);
+      d.setDate(now.getDate() + i);
+ 
+      if (!practiceDays.includes(d.getDay())) continue;
+ 
+      const occ = new Date(d);
+      occ.setHours(18, 0, 0, 0);
+ 
+      // now〜endの範囲に限定（endは「4週間後の同時刻」基準）
+      if (occ.getTime() >= now.getTime() && occ.getTime() <= end.getTime()) {
+        result.push(occ);
+      }
+    }
+ 
+    // 念のため日付順
+    result.sort((a,b) => a - b);
+    return result;
+  }
+ 
+  (function initSchedule(){
+    const now = new Date();
+ 
+    // 次回
+    const next = getNextPracticeDate(now);
+    document.getElementById('next-practice-date').textContent =
+      next ? formatJapaneseDate(next) : '調整中';
+ 
+    // schedule-list：次の4週間分
+    const occurrences = getNextFourWeeks(now);
+ 
+    const list = document.getElementById('practice-list');
+    list.innerHTML = occurrences.map(d => {
+      return `
+<li>
+<span>${formatJapaneseDate(d)}</span>
+<span>18:00 ～ 20:00</span>
+</li>
+      `;
+    }).join('');
+  })();
+</script>
 
 
         <!-- =========================
